@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.pooespol.p_poo;
+package com.pooespol.p_poo.modelo;
+
+import com.pooespol.p_poo.*;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -14,19 +16,19 @@ import java.util.ArrayList;
  *
  * @author José Marin
  */
-public class Vuelo {
+public class Vuelo implements Comparable<Vuelo>{
     
     String numVuelo;
     Ciudad origen;
     Destino destino;
-    String duracion;
+    int duracion;
     String horaSalida;
     String horaLlegada;
     String codigo;
     double precio;
 
     //constructor
-    public Vuelo(String numVuelo, Ciudad origen, Destino destino, String duracion, String horaSalida, String horaLlegada, String codigo, double precio) {
+    public Vuelo(String numVuelo, Ciudad origen, Destino destino, int duracion, String horaSalida, String horaLlegada, String codigo, double precio) {
         this.numVuelo = numVuelo;
         this.origen = origen;
         this.destino = destino;
@@ -47,7 +49,7 @@ public class Vuelo {
     public Destino getDestino() {
         return destino;
     }
-    public String getDuracion() {
+    public int getDuracion() {
         return duracion;
     }
     public String getHoraSalida() {
@@ -73,7 +75,7 @@ public class Vuelo {
     public void setDestino(Destino destino) {
         this.destino = destino;
     }
-    public void setDuracion(String duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
     public void setHoraSalida(String horaSalida) {
@@ -99,8 +101,16 @@ public class Vuelo {
             String line = bR.readLine();
             while(line!=null){
                 String[] datos = line.trim().split(",");
+                //crear destino
+                Destino dV = null;
+                ArrayList<Destino> lDestinos = Destino.cargarDestinos(App.pathFiles+"destinos.txt");
+                for(Destino d: lDestinos){
+                    if(d.getCiudad()==datos[2]){
+                        dV = new Destino(datos[2],d.getPais());
+                    }
+                }
                 //crear vuelo
-                Vuelo v = new Vuelo(datos[0],Ciudad.valueOf(datos[1]),datos[2],datos[3],datos[4],datos[5],datos[6],Double.valueOf(datos[7]));
+                Vuelo v = new Vuelo(datos[0],Ciudad.valueOf(datos[1]),dV,Integer.valueOf(datos[3]),datos[4],datos[5],datos[6],Double.valueOf(datos[7]));
                 lVuelos.add(v);
                 line = bR.readLine();
             }
@@ -117,6 +127,28 @@ public class Vuelo {
             }
         }
         return lVuelos;
+    }
+    
+    @Override
+    public int compareTo(Vuelo v){
+        // variable para separar criterio de orden 
+        int i = 0;        
+        int resultado = 0;
+        // verificacion
+        if(i==0){
+            if(v.getPrecio()>this.precio){
+                resultado = 1;
+            }else if(v.getPrecio()<this.precio){
+                resultado = -1;
+            }
+        }else{
+            if(v.getDuracion()>this.duracion){
+                resultado = 1;
+            }else if(v.getDuracion()<this.duracion){
+                resultado = -1;
+            }
+        }
+        return resultado;
     }
     
 }

@@ -2,15 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.pooespol.p_poo;
+package com.pooespol.p_poo.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author José Marin
  */
-public class Reserva {
+public class Reserva implements Pagable, Serializable{
     
     String codigoReserva;
     Cliente cliente;
@@ -93,6 +94,11 @@ public class Reserva {
         this.tarifaRegreso = tarifaRegreso;
     }
     
-    
+    public void generarTransaccion(){
+        
+        //codigo rellenar
+        
+        
+    }
     
 }
