@@ -1,1 +1,21 @@
-
+Río de Janeiro,Brasi
+Toronto,Canada
+Cali,Colombia
+México,México
+Guayaquil,Ecuador
+Santiago,Chile
+Lima,Perú
+Barcelona,España
+Roma,Italia
+Nueva York,USA
+Sydney,Australia
+Buenos Aires,Argentina
+El Cairo,Egipto
+Lagos,Nigeria
+París,Francia
+Estambul,Turquía
+Shanghai,China
+Montevideo,Uruguay
+La Paz,Bolivia
+Berlín,Alemania
+Moscú, Rusia
