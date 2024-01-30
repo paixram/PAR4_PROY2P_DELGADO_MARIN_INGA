@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.pooespol.p_poo;
+import com.pooespol.p_poo.modelo.*;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,6 +23,8 @@ import javafx.scene.image.ImageView;
  */
 public class VentanaBienvenidaController implements Initializable{
     @FXML
+    Label lblBienvenida;
+    @FXML
     Label lblName;
     @FXML
     Button btnPromociones;
@@ -31,6 +34,7 @@ public class VentanaBienvenidaController implements Initializable{
     ImageView imgBienvenida;
     @FXML
     ImageView imgFondo;
+    Cliente cliente = VentanaMenuController.clienteN;
     
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -48,15 +52,29 @@ public class VentanaBienvenidaController implements Initializable{
 //            imgFondo.setImage(imgv2);
 //        }catch(IOException ex2){            
 //        }
-        
-        lblName.setText("G6");
+    
+        char ultLetra = cliente.getNombre().charAt((cliente.getNombre().length())-1);
+        if(ultLetra=='a'){
+            lblBienvenida.setText("Bienvenida");
+        }else{
+            lblBienvenida.setText("Bienvenido");
+        }
+        lblName.setText(cliente.getNombre());
     }
     
     public void cargarVentanaPromociones(){
-        
+        try {
+            App.setRoot("VentanaOfertas");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
     
-    public void cargarVentanaReservar(){
-        
+    public void cargarVentanaReservar(){        
+        try {
+            App.setRoot("VentanaReserva");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }

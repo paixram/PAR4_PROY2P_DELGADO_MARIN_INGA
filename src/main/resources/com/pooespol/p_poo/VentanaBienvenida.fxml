@@ -23,7 +23,7 @@
                <children>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <Label text="Bienvenida" textFill="#24296b">
+                        <Label fx:id="lblBienvenida" text="Bienvenida" textFill="#24296b">
                            <font>
                               <Font name="Elephant" size="31.0" />
                            </font>
@@ -45,7 +45,7 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnReservar" mnemonicParsing="false" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to bottom, #0077be, #0093d1, #00a8e6, #00bcd4, #00ced6);" text="Reserva tu vuelo" textFill="WHITE">
+                        <Button fx:id="btnReservar" mnemonicParsing="false" onAction="#cargarVentanaReservar" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to bottom, #0077be, #0093d1, #00a8e6, #00bcd4, #00ced6);" text="Reserva tu vuelo" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
