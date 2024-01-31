@@ -23,6 +23,7 @@ public class App extends Application {
     //Recursos datos del sistema
     public static ArrayList<Cliente> lClientes = Cliente.cargarClientes("clientes.txt");
     public static ArrayList<Promocion> lPromociones = Promocion.cargarPromociones("promociones.txt");
+    public static ArrayList<Tarifa>lTarifas=Tarifa.cargarTarifas("tarifas.txt");
     
     
 //    @Override

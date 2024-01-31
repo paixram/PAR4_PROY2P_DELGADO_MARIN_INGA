@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.pooespol.p_poo.modelo;
-
+import com.pooespol.p_poo.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -76,7 +76,7 @@ public class Cliente {
         FileReader fR = null;
         BufferedReader bR = null;
         try{
-            fR = new FileReader(nameFile);
+            fR = new FileReader(App.pathFiles+nameFile);
             bR = new BufferedReader(fR);
             String line = bR.readLine();
             while(line!=null){
