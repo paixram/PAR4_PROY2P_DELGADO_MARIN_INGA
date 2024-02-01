@@ -82,7 +82,7 @@ public class VentanaMenuController implements Initializable {
                         Parent ventana_root = ventana_reservas_emergente.load();
                         
                         
-                        Scene scene_reservas = new Scene(ventana_root, 250, 400);
+                        Scene scene_reservas = new Scene(ventana_root, 300, 450);
                         Stage v_reservas = new Stage();
                         v_reservas.setTitle("Reservas");
                         v_reservas.setScene(scene_reservas);
