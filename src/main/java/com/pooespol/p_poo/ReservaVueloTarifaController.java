@@ -95,7 +95,7 @@ public class ReservaVueloTarifaController implements Initializable {
 
             // Calcula el costo total y muestra la etiqueta
             double porcentaje = tarifa.getPorcentaje();
-            double precioVuelo = VentanaReservaV1Controller.Vuelo.getPrecio(); // Ajusta según la estructura de tu código
+            double precioVuelo = VentanaReservaV1Controller.vueloSeleccionado.getPrecio(); // Ajusta según la estructura de tu código
             double precio = (porcentaje * precioVuelo) / 100 + precioVuelo;
             Label cTotalLabel = new Label("Costo Total: $" + precio);
             cTotalLabel.setTextFill(Color.WHITE);
@@ -123,7 +123,7 @@ public class ReservaVueloTarifaController implements Initializable {
     private void abrirVueloRegreso(Tarifa tarifa) {
         tarifaSeleccionada = tarifa;
         System.out.println(tarifaSeleccionada.toString());
-        precioTotal = (tarifa.getPorcentaje() * VentanaReservaV1Controller.Vuelo.getPrecio()) / 100 + VentanaReservaV1Controller.Vuelo.getPrecio(); // Ajusta según la estructura de tu código
+        precioTotal = (tarifa.getPorcentaje() * VentanaReservaV1Controller.vueloSeleccionado.getPrecio()) / 100 + VentanaReservaV1Controller.vueloSeleccionado.getPrecio(); // Ajusta según la estructura de tu código
         System.out.println(precioTotal);
         try {
             Stage stage = (Stage) scrollPaneTarifa.getScene().getWindow();

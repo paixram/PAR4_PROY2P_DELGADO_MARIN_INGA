@@ -105,7 +105,7 @@ public class VentanaReservaV3Controller implements Initializable {
     
     private void abrirVentanaTarifaRegreso(Vuelo vuelo) {
         Regreso = vuelo;
-        System.out.println(IDA.toString());
+        System.out.println(Regreso.toString());
         try {
             Stage stage = (Stage) panelDetalle.getScene().getWindow();
             stage.close();

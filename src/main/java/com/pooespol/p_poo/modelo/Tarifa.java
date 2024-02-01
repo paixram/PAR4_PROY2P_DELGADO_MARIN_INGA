@@ -79,8 +79,10 @@ public class Tarifa {
                  // Obtener el porcentaje de la tarifa
                 double porcentaje = Double.parseDouble(datos[3]); // Ajusta el índice según la posición del porcentaje en tus datos
                 // Crear una nueva instancia de Tarifa con el porcentaje
-                Tarifa nT = new Tarifa(datos[0], datos[1], lCaracteristicas, porcentaje);
+                Tarifa nT = new Tarifa(datos[0], datos[1], new ArrayList<>(lCaracteristicas), porcentaje);
                 lTarifas.add(nT);
+                lCaracteristicas.clear();
+
                 line = bR.readLine();
             }
         }catch(FileNotFoundException e1){
