@@ -39,7 +39,7 @@ public class ReservaVuelo5Controller implements Initializable {
     public static Vuelo v; 
 
     @FXML
-    private VBox VB;
+    VBox VB;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -93,7 +93,7 @@ public class ReservaVuelo5Controller implements Initializable {
 
     public void showTotal(){
         VBox precioBox = new VBox();
-        Label totalLabel = new Label("Precio total: "+ (ReservaVueloTarifaController.precioTotal+ VentanaReservaV3Controller.precioVTREGRESO));
+        Label totalLabel = new Label("Precio total: "+ (ReservaVueloTarifaController.precioTotal+ VentanaReservasV4Controller.precioTotalRegreso));
         totalLabel.setFont(Font.font("System", FontWeight.BOLD, 12));
         precioBox.getChildren().addAll(totalLabel);
         precioBox.setAlignment(Pos.CENTER_RIGHT);
@@ -107,10 +107,10 @@ public class ReservaVuelo5Controller implements Initializable {
         continuarBoton.setTextFill(Color.WHITE);
         continuarBOX.getChildren().addAll(continuarBoton);
         continuarBOX.setAlignment(Pos.CENTER);
-        vD.getChildren().add(continuarBOX);
+        VB.getChildren().add(continuarBOX);
 
         continuarBoton.setOnAction(event -> {
-                abrirVentanaDatos();
+                openVentanaDatos();
             });
     }
 
@@ -133,7 +133,7 @@ public class ReservaVuelo5Controller implements Initializable {
     private void openVentanaDatos() {
         try {
             
-        Stage stage = (Stage) vD.getScene().getWindow();
+        Stage stage = (Stage) VB.getScene().getWindow();
         stage.close();
         
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Datos.fxml"));

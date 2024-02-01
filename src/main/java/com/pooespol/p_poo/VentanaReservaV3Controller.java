@@ -218,7 +218,6 @@ public class VentanaReservaV3Controller implements Initializable {
                 public void handle(MouseEvent e){
                     vueloSeleccionado = v;
                     try {
-                        ReservaVueloTarifaController.OR = 1;
                         App.setRoot("ReservaVuelo4");   
                     } catch (IOException ex) {
                         ex.printStackTrace();

@@ -50,8 +50,6 @@ public class ReservaVueloTarifaController implements Initializable {
     private VBox VBoxTarifas;
     @FXML
     private ScrollPane scrollPaneTarifa;
-    
-    public static int OR = 0;
 
     @FXML
     public void showTarifas() {
@@ -129,12 +127,7 @@ public class ReservaVueloTarifaController implements Initializable {
         precioTotal = (tarifa.getPorcentaje() * VentanaReservaV1Controller.vueloSeleccionado.getPrecio()) / 100 + VentanaReservaV1Controller.vueloSeleccionado.getPrecio(); // Ajusta según la estructura de tu código
         System.out.println(precioTotal);
         try {
-            if(OR ==0){
-                App.setRoot("ReservaVuelo3");                        
-            }else{
-                App.setRoot("ReservaVuelo5");
-            }
-            
+            App.setRoot("ReservaVuelo3");
         } catch (IOException e) {
             e.printStackTrace();
         }

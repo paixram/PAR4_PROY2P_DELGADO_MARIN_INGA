@@ -59,13 +59,16 @@ public class VentanaReservaDatosPersonales implements Initializable {
             HBox miniD1 = new HBox(lblName,txtName);
             HBox miniD2 = new HBox(lblApelli,txtApelli);
             VBox miniC1 = new VBox(miniD1,miniD2);
+            miniC1.setSpacing(10);
             HBox miniD3 = new HBox(lblPassport,txtPassport);
             HBox miniD4 = new HBox(lblEmail,txtEmail);
             VBox miniC2 = new VBox(miniD3,miniD4);
+            miniC2.setSpacing(10);
             HBox contenedor = new HBox(miniC1,miniC2);
             
             contenedor.setAlignment(Pos.CENTER);
             contenedor.setStyle("-fx-border-color: red");
+            contenedor.setSpacing(10);
             
         }
     }
