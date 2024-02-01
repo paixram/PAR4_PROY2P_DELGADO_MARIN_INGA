@@ -19,15 +19,21 @@ public class Tarifa {
     String nombre;
     String tipo;
     ArrayList<String> lCaracteristicas;
-    
+    double porcentaje;
     //constructor
-    public Tarifa(String nombre, String tipo, ArrayList<String> lCaracteristicas){
+    public Tarifa(String nombre, String tipo, ArrayList<String> lCaracteristicas,double porcentaje){
         this.nombre = nombre;
         this.tipo = tipo;
         this.lCaracteristicas = lCaracteristicas;
+        this.porcentaje=porcentaje;
     }
 
     //getters
+    
+    public double getPorcentaje() {
+        return porcentaje;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -48,6 +54,10 @@ public class Tarifa {
     public void setlCaracteristicas(ArrayList<String> lCaracteristicas) {
         this.lCaracteristicas = lCaracteristicas;
     }
+
+    public void setPorcentaje(int porcentaje) {
+        this.porcentaje = porcentaje;
+    }
     
     //
     public static ArrayList<Tarifa> cargarTarifas(String nameFile){
@@ -66,8 +76,13 @@ public class Tarifa {
                     String nC = caracteristicas[i];
                     lCaracteristicas.add(nC);
                 }
-                Tarifa nT = new Tarifa(datos[0],datos[1],lCaracteristicas);
+                 // Obtener el porcentaje de la tarifa
+                double porcentaje = Double.parseDouble(datos[3]); // Ajusta el índice según la posición del porcentaje en tus datos
+                // Crear una nueva instancia de Tarifa con el porcentaje
+                Tarifa nT = new Tarifa(datos[0], datos[1], new ArrayList<>(lCaracteristicas), porcentaje);
                 lTarifas.add(nT);
+                lCaracteristicas.clear();
+
                 line = bR.readLine();
             }
         }catch(FileNotFoundException e1){

@@ -13,9 +13,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- *
+ * Clase que representa un vuelo.
+ * 
+ * Un vuelo contiene información como el número de vuelo, la ciudad de origen y destino,
+ * la duración, las horas de salida y llegada, el código y el precio.
+ * 
+ * Esta clase implementa la interfaz Comparable para permitir la comparación entre vuelos.
  * @author José Marin
  */
+
 public class Vuelo implements Comparable<Vuelo>{
     
     String numVuelo;
@@ -27,7 +33,18 @@ public class Vuelo implements Comparable<Vuelo>{
     String codigo;
     double precio;
 
-    //constructor
+    /**
+     * Constructor para la clase Vuelo.
+     *
+     * @param numVuelo el número de vuelo
+     * @param origen la ciudad de origen
+     * @param destino el destino del vuelo
+     * @param duracion la duración del vuelo
+     * @param horaSalida la hora de salida
+     * @param horaLlegada la hora de llegada
+     * @param codigo el código del vuelo
+     * @param precio el precio del vuelo
+     */
     public Vuelo(String numVuelo, Ciudad origen, Destino destino, int duracion, String horaSalida, String horaLlegada, String codigo, double precio) {
         this.numVuelo = numVuelo;
         this.origen = origen;
@@ -90,7 +107,12 @@ public class Vuelo implements Comparable<Vuelo>{
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-
+    /**
+     * Carga los vuelos desde un archivo de texto.
+     *
+     * @param nameFile el nombre del archivo de texto
+     * @return una lista de vuelos cargados desde el archivo
+     */
     public static ArrayList<Vuelo> cargarVuelos(String nameFile){
         ArrayList<Vuelo> lVuelos = new ArrayList<>();
         FileReader fR = null;
@@ -99,13 +121,13 @@ public class Vuelo implements Comparable<Vuelo>{
             fR = new FileReader(App.pathFiles+nameFile);
             bR = new BufferedReader(fR);
             String line = bR.readLine();
-            while(line!=null){
+            while(line!=null){                
                 String[] datos = line.trim().split(",");
                 //crear destino
                 Destino dV = null;
-                ArrayList<Destino> lDestinos = Destino.cargarDestinos(App.pathFiles+"destinos.txt");
-                for(Destino d: lDestinos){
-                    if(d.getCiudad()==datos[2]){
+                ArrayList<Destino> lDestinos = Destino.cargarDestinos("destinos.txt");
+                for(Destino d: lDestinos){                    
+                    if(d.getCiudad().equals(datos[2])){                        
                         dV = new Destino(datos[2],d.getPais());
                     }
                 }
@@ -128,7 +150,13 @@ public class Vuelo implements Comparable<Vuelo>{
         }
         return lVuelos;
     }
-    
+    /**
+     * Compara este vuelo con otro vuelo.
+     *
+     * @param v el vuelo a comparar
+     * @return un valor negativo, cero o un valor positivo según este vuelo
+     *         sea menor, igual o mayor que el vuelo proporcionado
+     */
     @Override
     public int compareTo(Vuelo v){
         // variable para separar criterio de orden 
@@ -153,5 +181,6 @@ public class Vuelo implements Comparable<Vuelo>{
         }
         return resultado;
     }
+   
     
 }

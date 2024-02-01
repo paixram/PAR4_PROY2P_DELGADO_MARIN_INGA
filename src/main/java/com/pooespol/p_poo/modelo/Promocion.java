@@ -22,7 +22,15 @@ public class Promocion {
     String codigo;
     int descuento;
 
-    //constructor
+    /**
+     * Constructor para la clase Promocion.
+     * 
+     * @param coordenadaY la coordenada Y de la promoción
+     * @param coordenadaX la coordenada X de la promoción
+     * @param codigo el código de la promoción
+     * @param pais el país al que aplica la promoción
+     * @param descuento el descuento asociado a la promoción
+     */
     public Promocion(double coordenadaY, double coordenadaX, String codigo, String pais, int descuento) {
         this.coordenadaY = coordenadaY;
         this.coordenadaX = coordenadaX;
@@ -65,7 +73,12 @@ public class Promocion {
         this.descuento = descuento;
     }
 
-    //
+    /**
+     * Carga las promociones desde un archivo dado.
+     * 
+     * @param nameFile el nombre del archivo del cual cargar las promociones
+     * @return una lista de promociones cargadas desde el archivo
+     */
     public static ArrayList<Promocion> cargarPromociones(String nameFile){
         ArrayList<Promocion> lPromociones = new ArrayList<>();
         FileReader fR = null;

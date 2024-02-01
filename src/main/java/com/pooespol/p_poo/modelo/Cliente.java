@@ -22,7 +22,15 @@ public class Cliente {
     String usuario;
     String contrasenia;
     
-    //constructor
+    /**
+     * Constructor para la clase Cliente.
+     * 
+     * @param cedula la cédula del cliente
+     * @param nombre el nombre del cliente
+     * @param apellido el apellido del cliente
+     * @param usuario el nombre de usuario del cliente
+     * @param contrasenia la contraseña del cliente
+     */
     public Cliente(String cedula, String nombre, String apellido, String usuario, String contrasenia) {
         this.cedula = cedula;
         this.nombre = nombre;
@@ -70,7 +78,12 @@ public class Cliente {
         return this.nombre+" "+this.apellido;
     }
     
-    //cargarClientes
+    /**
+     * Carga clientes desde un archivo dado.
+     * 
+     * @param nameFile el nombre del archivo del cual cargar los clientes
+     * @return una lista de clientes cargados desde el archivo
+     */
     public static ArrayList<Cliente> cargarClientes(String nameFile){
         ArrayList<Cliente> lClientes = new ArrayList<>();
         FileReader fR = null;

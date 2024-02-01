@@ -14,6 +14,12 @@ import java.util.ArrayList;
  *
  * @author José Marin
  */
+/**
+     * Constructor para la clase Destino.
+     * 
+     * @param ciudad el nombre de la ciudad del destino
+     * @param pais el nombre del país del destino
+     */
 public class Destino {
     
     String ciudad;
@@ -44,7 +50,12 @@ public class Destino {
         return this.ciudad+", "+this.pais;
     }
     
-    //cargarDestino
+    /**
+     * Carga destinos desde un archivo dado.
+     * 
+     * @param nameFile el nombre del archivo del cual cargar los destinos
+     * @return una lista de destinos cargados desde el archivo
+     */
     public static ArrayList<Destino> cargarDestinos(String nameFile){
         ArrayList<Destino> lDestinos = new ArrayList<>();
         FileReader fR = null;

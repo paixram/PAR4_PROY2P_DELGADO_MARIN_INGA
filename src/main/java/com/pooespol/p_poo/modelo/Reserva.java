@@ -8,9 +8,16 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- *
+ * Clase que representa una reserva de vuelo.
+ * 
+ * Una reserva contiene información como el código de reserva, el cliente asociado,
+ * las fechas de salida e ingreso, el número de pasajeros, los vuelos de ida y regreso,
+ * así como las tarifas asociadas.
+ * 
+ * Esta clase implementa la interfaz Pagable y Serializable.
  * @author José Marin
  */
+
 public class Reserva implements Pagable, Serializable{
     
     String codigoReserva;
@@ -23,7 +30,19 @@ public class Reserva implements Pagable, Serializable{
     Tarifa tarifaIda;
     Tarifa tarifaRegreso;
 
-    //constructor
+      /**
+     * Constructor para la clase Reserva.
+     * 
+     * @param codigoReserva el código de la reserva
+     * @param cliente el cliente asociado a la reserva
+     * @param fechaSalida la fecha de salida
+     * @param fechaIngreso la fecha de ingreso
+     * @param numPasajero el número de pasajeros
+     * @param vueloIda el vuelo de ida
+     * @param vueloRegreso el vuelo de regreso
+     * @param tarifaIda la tarifa de ida
+     * @param tarifaRegreso la tarifa de regreso
+     */
     public Reserva(String codigoReserva, Cliente cliente, Date fechaSalida, Date fechaIngreso, int numPasajero, Vuelo vueloIda, Vuelo vueloRegreso, Tarifa tarifaIda, Tarifa tarifaRegreso) {
         this.codigoReserva = codigoReserva;
         this.cliente = cliente;
