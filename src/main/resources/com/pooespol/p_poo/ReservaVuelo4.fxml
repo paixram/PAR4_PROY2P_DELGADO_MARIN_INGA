@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
@@ -24,3 +25,6 @@
       </ScrollPane>
    </children>
 </VBox>
+=======
+
+>>>>>>> acabf4d2b17f0934f2144defc5948a95922493c7

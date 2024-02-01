@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.pooespol.p_poo;
 
 /**
@@ -34,11 +31,12 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-public class ReservaVueloTarifaController implements Initializable {
+
+public class VentanaReservasV4Controller implements Initializable {
     
     ArrayList<Tarifa> tarifas;
-    public static Tarifa tarifaSeleccionada;
-    public static double precioTotal;
+    public static Tarifa tarifaSelecciondaRegreso;
+    public static double precioTotalRegreso;
     public static Vuelo vueloSeleccionado;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -50,8 +48,6 @@ public class ReservaVueloTarifaController implements Initializable {
     private VBox VBoxTarifas;
     @FXML
     private ScrollPane scrollPaneTarifa;
-    
-    public static int OR = 0;
 
     @FXML
     public void showTarifas() {
@@ -60,16 +56,16 @@ public class ReservaVueloTarifaController implements Initializable {
         for (int i = 0; i < tarifas.size(); i++) {
             Tarifa tarifa = tarifas.get(i);
 
-            VBox tarifaVBox = new VBox();
-            tarifaVBox.setAlignment(Pos.CENTER);
-            VBox.setVgrow(tarifaVBox, Priority.ALWAYS);
+            VBox tVBox = new VBox();
+            tVBox.setAlignment(Pos.CENTER);
+            VBox.setVgrow(tVBox, Priority.ALWAYS);
 
             Label N1 = new Label(tarifa.getTipo() + " " + tarifa.getNombre()); // Ajusta los métodos según la estructura de tu clase Tarifa
             N1.setTextAlignment(TextAlignment.LEFT);
             N1.setTextFill(Color.valueOf(colores[i % colores.length]));
             N1.setFont(Font.font("System", FontWeight.BOLD, 12));
 
-            tarifaVBox.getChildren().add(N1);
+            tVBox.getChildren().add(N1);
 
             for (String caracteristica : tarifa.getlCaracteristicas()) { // Ajusta el método que devuelve las características si es necesario
                 HBox caracteristicaBox = new HBox();
@@ -93,7 +89,7 @@ public class ReservaVueloTarifaController implements Initializable {
                 caracteristicaBox.getChildren().add(cLabel);
                 caracteristicaBox.setSpacing(4);
 
-                tarifaVBox.getChildren().add(caracteristicaBox);
+                tVBox.getChildren().add(caracteristicaBox);
             }
 
             // Calcula el costo total y muestra la etiqueta
@@ -108,33 +104,34 @@ public class ReservaVueloTarifaController implements Initializable {
             precioBox.getChildren().add(cTotalLabel);
 
             String color = colores[i % colores.length];
-            tarifaVBox.setStyle("-fx-border-color: " + color);
+            tVBox.setStyle("-fx-border-color: " + color);
             precioBox.setStyle("-fx-background-color: " + color);
 
             N1.setFont(Font.font("System", FontWeight.BOLD, 12));
             cTotalLabel.setFont(Font.font("System", FontWeight.BOLD, 12));
             cTotalLabel.setTextAlignment(TextAlignment.CENTER);
 
-            tarifaVBox.getChildren().addAll(precioBox);
+            tVBox.getChildren().addAll(precioBox);
 
-            VBoxTarifas.getChildren().add(tarifaVBox);
+            VBoxTarifas.getChildren().add(tVBox);
 
-            tarifaVBox.setOnMouseClicked(event -> openVueloRegreso(tarifa));
+            tVBox.setOnMouseClicked(event -> openVueloRegreso(tarifa));
         }
     }
 
     private void openVueloRegreso(Tarifa tarifa) {
-        tarifaSeleccionada = tarifa;
-        System.out.println(tarifaSeleccionada.toString());
-        precioTotal = (tarifa.getPorcentaje() * VentanaReservaV1Controller.vueloSeleccionado.getPrecio()) / 100 + VentanaReservaV1Controller.vueloSeleccionado.getPrecio(); // Ajusta según la estructura de tu código
-        System.out.println(precioTotal);
+        tarifaSelecciondaRegreso = tarifa;
+        System.out.println(tarifaSelecciondaRegreso.toString());
+        precioTotalRegreso = (tarifa.getPorcentaje() * VentanaReservaV1Controller.vueloSeleccionado.getPrecio()) / 100 + VentanaReservaV1Controller.vueloSeleccionado.getPrecio(); // Ajusta según la estructura de tu código
+        System.out.println(precioTotalRegreso);
         try {
-            if(OR ==0){
-                App.setRoot("ReservaVuelo3");                        
-            }else{
-                App.setRoot("ReservaVuelo5");
-            }
-            
+            Stage stage = (Stage) scrollPaneTarifa.getScene().getWindow();
+            stage.close();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ReservaVuelo3.fxml")); // Ajusta el nombre del archivo FXML según tu estructura
+            Parent root = fxmlLoader.load();
+            Stage nueva = new Stage();
+            nueva.setScene(new Scene(root));
+            nueva.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
