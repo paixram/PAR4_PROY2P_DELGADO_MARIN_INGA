@@ -38,8 +38,13 @@ public class VentanaReservaV1Controller implements Initializable{
     public static ArrayList<Vuelo> lVuelosSeleccionados = new ArrayList<>();
     
     /**
-     * Initializes the controller class.
+     * Inicializa la ventana de reserva de vuelos.
+     * Se ejecuta al cargar el archivo FXML.
+     * 
+     * @param url La ubicación del objeto FXML.
+     * @param rb  Recursos específicos de la localización para este objeto FXML.
      */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lblInfo.setText(lblInfo.getText()+" "+VentanaReservaController.origen+" - "+VentanaReservaController.destino);

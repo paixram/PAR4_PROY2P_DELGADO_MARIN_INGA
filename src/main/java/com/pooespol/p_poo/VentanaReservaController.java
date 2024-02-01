@@ -51,6 +51,13 @@ public class VentanaReservaController implements Initializable {
      /**
      * Initializes the controller class.
      */
+    /**
+     * Inicializa la ventana de reserva de vuelos.
+     * Configura los componentes de la interfaz de usuario y establece los valores iniciales.
+     * 
+     * @param url La ubicación del objeto FXML.
+     * @param rb  Recursos específicos de la localización para este objeto FXML.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         cbxOrigen.getItems().addAll(Ciudad.Guayaquil,Ciudad.Cuenca,Ciudad.Quito);
@@ -64,7 +71,9 @@ public class VentanaReservaController implements Initializable {
     }
     
     
-    
+    /**
+     * Realiza una búsqueda de vuelos disponibles según los criterios proporcionados por el usuario.
+     */
     public void buscarVuelos(){
         if(cbxOrigen.getValue()!=null && cbxDestino.getValue()!=null && dpSalida.getValue()!=null && dpRegreso.getValue()!=null){
             origen = String.valueOf(cbxOrigen.getValue());            
