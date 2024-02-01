@@ -127,7 +127,8 @@ public class Vuelo implements Comparable<Vuelo>{
                 Destino dV = null;
                 ArrayList<Destino> lDestinos = Destino.cargarDestinos("destinos.txt");
                 for(Destino d: lDestinos){                    
-                    if(d.getCiudad().equals(datos[2])){                        
+                    
+                    if(d.getCiudad().equals(datos[2])){                            
                         dV = new Destino(datos[2],d.getPais());
                     }
                 }

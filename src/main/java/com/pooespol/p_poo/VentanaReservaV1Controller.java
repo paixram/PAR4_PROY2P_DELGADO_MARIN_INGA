@@ -106,7 +106,7 @@ public class VentanaReservaV1Controller implements Initializable{
             contenedor.setOnMouseClicked(new EventHandler<MouseEvent>(){
                 @Override
                 public void handle(MouseEvent e){
-                    vueloSeleccionado =v;
+                    vueloSeleccionado = v;
                     try {
                         App.setRoot("ReservaVuelo2");
                     } catch (IOException ex) {
