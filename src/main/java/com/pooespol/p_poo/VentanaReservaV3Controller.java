@@ -123,10 +123,10 @@ public class VentanaReservaV3Controller implements Initializable {
         String seleccion = cbxOrdenado.getValue();
         if (seleccion != null) {
             switch (seleccion) {
-                case "Precio":
+                case "precio":
                     Collections.sort(vuelosConsultar, Comparator.comparingDouble(Vuelo::getPrecio));
                     break;
-                case "Duración":
+                case "duración":
                     Collections.sort(vuelosConsultar, Comparator.comparingInt(Vuelo::getDuracion));
                     break;
             }
