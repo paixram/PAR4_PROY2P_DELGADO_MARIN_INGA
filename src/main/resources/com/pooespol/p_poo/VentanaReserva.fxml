@@ -98,7 +98,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Spinner fx:id="spNumVIajeros">
+            <Spinner fx:id="spNumViajeros">
                <HBox.margin>
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
