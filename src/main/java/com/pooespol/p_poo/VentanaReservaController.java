@@ -71,7 +71,7 @@ public class VentanaReservaController implements Initializable {
 //            // Manejar el cambio de valor (puedes implementar tu lógica aquí)
 //            System.out.println("Nuevo valor: " + newValue);
 //        });
-        spNumViajeros = new Spinner<Integer>();
+       
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
         valueFactory.setValue(1);
         spNumViajeros.setValueFactory(valueFactory);

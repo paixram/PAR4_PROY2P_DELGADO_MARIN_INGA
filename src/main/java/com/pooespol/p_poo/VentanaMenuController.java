@@ -81,7 +81,6 @@ public class VentanaMenuController implements Initializable {
                         FXMLLoader ventana_reservas_emergente = new FXMLLoader(getClass().getResource("VentanaReservasEmergentes.fxml"));
                         Parent ventana_root = ventana_reservas_emergente.load();
                         
-                        
                         Scene scene_reservas = new Scene(ventana_root, 300, 450);
                         Stage v_reservas = new Stage();
                         v_reservas.setTitle("Reservas");
