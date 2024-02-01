@@ -121,6 +121,8 @@ public class ReservaVuelo5Controller implements Initializable {
         horasBox.getChildren().addAll(sLabel, separator, llLabel); // Utilizamos el Separator como separador
 
         horasBox.setAlignment(Pos.CENTER);
+        
+        
  
     }
 
@@ -206,7 +208,7 @@ public class ReservaVuelo5Controller implements Initializable {
 
         try {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Detalles.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DetalleVuelo.fxml"));
 
         Parent root = fxmlLoader.load();
 
@@ -229,27 +231,9 @@ public class ReservaVuelo5Controller implements Initializable {
     private void openVentanaDatos() {
 
         try {
-
-        Stage stage = (Stage) VB.getScene().getWindow();
-
-        stage.close();
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Datos.fxml"));
-
-        Parent root = fxmlLoader.load();
-
-        Scene scene = new Scene(root);
-
-        Stage detallesStage = new Stage();
-
-        detallesStage.setScene(scene);
-
-        detallesStage.show();
-
+            App.setRoot("ReservaDatosPersonales");
         } catch (IOException e) {
-
             e.printStackTrace();
-
         }
 
     }

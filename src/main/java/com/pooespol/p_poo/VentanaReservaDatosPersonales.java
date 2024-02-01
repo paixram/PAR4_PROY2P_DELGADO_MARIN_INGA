@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -66,17 +67,20 @@ public class VentanaReservaDatosPersonales implements Initializable {
             miniC2.setSpacing(10);
             HBox contenedor = new HBox(miniC1,miniC2);
             
+            
             contenedor.setAlignment(Pos.CENTER);
             contenedor.setStyle("-fx-border-color: red");
             contenedor.setSpacing(10);
+            HBox.setMargin(contenedor,new Insets(10,10,10,10));
             
+            panelDetalle.getChildren().addAll(contenedor);
         }
     }
     
     @FXML
     public void continuar(){
         try {
-            App.setRoot("ReservaDatosPersonales");
+            App.setRoot("PagoA");
         } catch (IOException ex) {
             ex.printStackTrace();
         }
