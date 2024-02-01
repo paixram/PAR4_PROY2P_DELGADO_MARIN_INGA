@@ -3,12 +3,12 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #b4b4b4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #b4b4b4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pooespol.p_poo.VentanaReservaV1Controller">
    <children>
       <Label fx:id="lblInfo" alignment="CENTER" contentDisplay="CENTER" prefHeight="42.0" prefWidth="600.0" text="Selecciona tu vuelo" textAlignment="JUSTIFY" textFill="#661d1d">
          <font>
@@ -28,7 +28,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <ComboBox fx:id="cbxOrdenado" prefHeight="18.0" prefWidth="150.0">
+            <ComboBox fx:id="cbxOrdenado" onAction="#ordenar" prefHeight="18.0" prefWidth="150.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -38,14 +38,10 @@
             </ComboBox>
          </children>
       </HBox>
-      <VBox fx:id="panelDetalle" prefHeight="200.0" prefWidth="100.0">
-         <children>
-            <ScrollBar orientation="VERTICAL" prefHeight="234.0" prefWidth="14.0">
-               <VBox.margin>
-                  <Insets left="585.0" />
-               </VBox.margin>
-            </ScrollBar>
-         </children>
-      </VBox>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0">
+         <content>
+            <VBox fx:id="panelDetalle" prefHeight="200.0" prefWidth="586.0" />
+         </content>
+      </ScrollPane>
    </children>
 </VBox>

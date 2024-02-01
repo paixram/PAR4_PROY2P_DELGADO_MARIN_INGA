@@ -96,7 +96,7 @@ public class Vuelo implements Comparable<Vuelo>{
         FileReader fR = null;
         BufferedReader bR = null;
         try{
-            fR = new FileReader(nameFile);
+            fR = new FileReader(App.pathFiles+nameFile);
             bR = new BufferedReader(fR);
             String line = bR.readLine();
             while(line!=null){
@@ -133,6 +133,9 @@ public class Vuelo implements Comparable<Vuelo>{
     public int compareTo(Vuelo v){
         // variable para separar criterio de orden 
         int i = 0;        
+        if(VentanaReservaV1Controller.opcionOrder==1){
+            i = 1;
+        }        
         int resultado = 0;
         // verificacion
         if(i==0){
