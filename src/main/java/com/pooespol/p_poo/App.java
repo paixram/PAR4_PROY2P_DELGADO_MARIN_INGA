@@ -40,6 +40,7 @@ public class App extends Application {
     public static ArrayList<Promocion> lPromociones = Promocion.cargarPromociones("promociones.txt");
     public static ArrayList<Tarifa>lTarifas= Tarifa.cargarTarifas("tarifas.txt");
     public static ArrayList<Destino> lDestinos = Destino.cargarDestinos("destinos.txt");
+    public static ArrayList<Vuelo> lVuelos = Vuelo.cargarVuelos("vuelos.txt");
     
     
 //    @Override
