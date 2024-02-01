@@ -99,13 +99,13 @@ public class Vuelo implements Comparable<Vuelo>{
             fR = new FileReader(App.pathFiles+nameFile);
             bR = new BufferedReader(fR);
             String line = bR.readLine();
-            while(line!=null){
+            while(line!=null){                
                 String[] datos = line.trim().split(",");
                 //crear destino
                 Destino dV = null;
-                ArrayList<Destino> lDestinos = Destino.cargarDestinos(App.pathFiles+"destinos.txt");
-                for(Destino d: lDestinos){
-                    if(d.getCiudad()==datos[2]){
+                ArrayList<Destino> lDestinos = Destino.cargarDestinos("destinos.txt");
+                for(Destino d: lDestinos){                    
+                    if(d.getCiudad().equals(datos[2])){                        
                         dV = new Destino(datos[2],d.getPais());
                     }
                 }
@@ -153,5 +153,6 @@ public class Vuelo implements Comparable<Vuelo>{
         }
         return resultado;
     }
+   
     
 }

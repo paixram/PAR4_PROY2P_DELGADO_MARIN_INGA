@@ -55,39 +55,10 @@ public class VentanaReservaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         cbxOrigen.getItems().addAll(Ciudad.Guayaquil,Ciudad.Cuenca,Ciudad.Quito);
         cbxDestino.getItems().setAll(App.lDestinos);
-        
-//        spNumViajeros = new Spinner<>(0,100,0);
-//        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,100,0,1);
-//        spNumViajeros.setValueFactory(valueFactory);
-//        
-//        spNumViajeros.setOnMouseClicked(event -> {
-//            // Manejar el clic en el Spinner (puedes implementar tu lógica aquí)
-//            System.out.println("Clic en el Spinner");
-//            
-//        });
-
-//        También puedes manejar el evento de cambio de valor
-//        spNumViajeros.valueProperty().addListener((observable, oldValue, newValue) -> {
-//            // Manejar el cambio de valor (puedes implementar tu lógica aquí)
-//            System.out.println("Nuevo valor: " + newValue);
-//        });
        
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
         valueFactory.setValue(1);
         spNumViajeros.setValueFactory(valueFactory);
-//        
-//        System.out.println("jsjs");
-//        final int initialValue = 1;
-//        spNumViajeros = new Spinner<Integer>();
-//        
-//        System.out.println("luizzz");
-//        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10,initialValue);
-//        spNumViajeros.setValueFactory(valueFactory);
-//        System.out.println("josezzz");
-//        
-//        if(spNumViajeros.getValue()==5){
-//            System.out.println("FUNCIONA LA WBD");
-//        }
         
         buscarVuelos();
     }
@@ -103,9 +74,9 @@ public class VentanaReservaController implements Initializable {
             localDate = dpRegreso.getValue();
             regreso = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
             cantViajeros = spNumViajeros.getValue();
-            System.out.println("zzz");
+            
             try {
-                App.setRoot("VentanaReservaV1");
+                App.setRoot("ReservaVuelo1");
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
