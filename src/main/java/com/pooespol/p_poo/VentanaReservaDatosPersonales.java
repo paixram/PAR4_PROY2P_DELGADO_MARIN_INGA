@@ -39,10 +39,10 @@ public class VentanaReservaDatosPersonales implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        llenarDatos();
     }
     
-    
+    @FXML
     public void llenarDatos(){
         cantPasajeros = VentanaReservaController.cantViajeros;
         for(int i = 0;i<cantPasajeros;i++){
@@ -70,6 +70,7 @@ public class VentanaReservaDatosPersonales implements Initializable {
         }
     }
     
+    @FXML
     public void continuar(){
         try {
             App.setRoot("ReservaDatosPersonales");

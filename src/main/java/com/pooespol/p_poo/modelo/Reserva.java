@@ -4,6 +4,9 @@
  */
 package com.pooespol.p_poo.modelo;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -111,6 +114,27 @@ public class Reserva implements Pagable, Serializable{
     }
     public void setTarifaRegreso(Tarifa tarifaRegreso) {
         this.tarifaRegreso = tarifaRegreso;
+    }
+    
+    public void guardarReserva(){
+        FileWriter fW = null;
+        BufferedWriter bW = null;
+        try{
+            fW = new FileWriter("reservas.txt");
+            bW = new BufferedWriter(fW);
+            
+            
+            
+        }catch(IOException e){
+            
+        }finally{
+            try{
+                bW.close();
+                fW.close();
+            }catch(IOException ex){                
+            }
+        }
+                
     }
     
     public void generarTransaccion(){
