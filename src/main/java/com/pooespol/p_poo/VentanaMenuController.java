@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package com.pooespol.p_poo;
+
 import com.pooespol.p_poo.modelo.*;
 
 import java.io.IOException;
@@ -75,7 +76,20 @@ public class VentanaMenuController implements Initializable {
                 if(c.getContrasenia().equals(contrasenia)){
                     clienteN = c;
                     try {
-                        App.setRoot("VentanaBienvenida");
+                        //VentanaReservasEmergency d = new VentanaReservasEmergency();
+                        //d.show_reservas();
+                        FXMLLoader ventana_reservas_emergente = new FXMLLoader(getClass().getResource("VentanaReservasEmergentes.fxml"));
+                        Parent ventana_root = ventana_reservas_emergente.load();
+                        
+                        
+                        Scene scene_reservas = new Scene(ventana_root, 250, 400);
+                        Stage v_reservas = new Stage();
+                        v_reservas.setTitle("Reservas");
+                        v_reservas.setScene(scene_reservas);
+                        
+                        v_reservas.show();
+                        App.setRoot("VentanaBienvenida");  
+                        
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
