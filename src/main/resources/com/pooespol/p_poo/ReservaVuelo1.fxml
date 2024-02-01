@@ -40,7 +40,7 @@
       </HBox>
       <ScrollPane prefHeight="200.0" prefWidth="200.0">
          <content>
-            <VBox fx:id="panelDetalle" prefHeight="200.0" prefWidth="586.0" />
+            <VBox fx:id="panelDetalle" alignment="CENTER" prefHeight="200.0" prefWidth="586.0" />
          </content>
       </ScrollPane>
    </children>
