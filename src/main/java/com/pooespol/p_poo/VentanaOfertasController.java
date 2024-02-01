@@ -29,7 +29,10 @@ import javafx.stage.Stage;
 import com.pooespol.p_poo.modelo.Promocion;
 import javafx.geometry.Insets;
 
-
+/**
+ *
+ * @author José Miguel
+ */
 public class VentanaOfertasController implements Initializable {
 
     ArrayList<Promocion> promo;
@@ -39,16 +42,29 @@ public class VentanaOfertasController implements Initializable {
     private AnchorPane ancho;
     @FXML
     private AnchorPane anchoImg;
-
+    /**
+     * Inicializa el controlador de la ventana de ofertas.
+     * <p>
+     * Este método carga el mapa de promociones y muestra las imágenes de las promociones disponibles.
+     * </p>
+     *
+     * @param url la ubicación relativa del archivo FXML
+     * @param rb el objeto ResourceBundle que contiene las propiedades específicas del idioma
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Inicialización de la clase, si es necesaria
+        
         InputStream image = getClass().getResourceAsStream("/images/mapa.png");
         imgView.setImage(new Image(image));
         find();
     }
 
-   
+      /**
+     * Busca y muestra las promociones disponibles en la aplicación.
+     * <p>
+     * Este método carga las promociones disponibles y muestra sus imágenes en el mapa de promociones.
+     * </p>
+     */
     public void find() {
 
         promo=Promocion.cargarPromociones("promociones.txt");
@@ -60,7 +76,12 @@ public class VentanaOfertasController implements Initializable {
         sleep.start();
     }
 
-     
+     /**
+     * Muestra las imágenes de las promociones en el mapa de promociones.
+     *
+     * @param promociones la lista de promociones a mostrar
+     * @param contenedor el contenedor para mostrar las imágenes de las promociones
+     */
     public void showImages(ArrayList<Promocion> promociones, AnchorPane contenedor) {
         for (Promocion promo : promociones) {
             InputStream img2 = getClass().getResourceAsStream("/images/ubicacion.png");
@@ -119,8 +140,13 @@ public class VentanaOfertasController implements Initializable {
         }
     }
 
-   
-    public static void cerrar(Label label, Stage escenario) {
+     /**
+     * Cierra la ventana emergente después de 5 segundos.
+     *
+     * @param label el componente de etiqueta para mostrar el tiempo restante antes de cerrar la ventana
+     * @param scene la ventana emergente que se cerrará después de 5 segundos
+     */
+    public static void close(Label label, Stage scene) {
         for (int i = 5; i != 0; i--) {
             String status = "Cerrando en " + i + " segundos...";
             Platform.runLater(() -> label.setText(status));
@@ -130,10 +156,16 @@ public class VentanaOfertasController implements Initializable {
                 ex.printStackTrace();
             }
         }
-        Platform.runLater(escenario::close);
+        Platform.runLater(scene::close);
     }
-    public static void c(Label label, Stage escenario) {
-        Thread slep = new Thread(() -> cerrar(label, escenario));
+    /**
+     * Inicia un hilo para cerrar la ventana emergente después de 5 segundos.
+     *
+     * @param label el componente de etiqueta para mostrar el tiempo restante antes de cerrar la ventana
+     * @param scene la ventana emergente que se cerrará después de 5 segundos
+     */
+    public static void c(Label label, Stage scene) {
+        Thread slep = new Thread(() -> close(label, scene));
         slep.start();
     }
 

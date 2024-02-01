@@ -35,7 +35,17 @@ public class VentanaBienvenidaController implements Initializable{
     @FXML
     ImageView imgFondo;
     Cliente cliente = VentanaMenuController.clienteN;
-    
+     
+    /**
+     * Inicializa la ventana de bienvenida.
+     * 
+     * Este método carga las imágenes de bienvenida y establece el mensaje de bienvenida
+     * según el nombre del cliente.
+     * 
+     *
+     * @param url la ubicación relativa del archivo FXML
+     * @param rb el objeto ResourceBundle que contiene las propiedades específicas del idioma
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb){
         
@@ -61,7 +71,12 @@ public class VentanaBienvenidaController implements Initializable{
         }
         lblName.setText(cliente.getNombre());
     }
-    
+     /**
+     * Carga la ventana de promociones.
+     * <p>
+     * Este método carga la ventana donde se muestran las promociones disponibles.
+     * </p>
+     */
     public void cargarVentanaPromociones(){
         try {
             App.setRoot("VentanaOfertas");
@@ -69,7 +84,12 @@ public class VentanaBienvenidaController implements Initializable{
             ex.printStackTrace();
         }
     }
-    
+    /**
+     * Carga la ventana de reserva.
+     * <p>
+     * Este método carga la ventana donde el usuario puede realizar una reserva.
+     * </p>
+     */
     public void cargarVentanaReservar(){        
         try {
             App.setRoot("VentanaReserva");

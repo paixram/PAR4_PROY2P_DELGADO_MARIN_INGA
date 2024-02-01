@@ -28,7 +28,13 @@ import javafx.stage.Stage;
 public class VentanaMenuController implements Initializable {
 
     /**
-     * Initializes the controller class.
+     * Inicializa el controlador de la ventana de menú.
+     * <p>
+     * Este método configura la autenticación al inicializar la ventana de menú.
+     * </p>
+     *
+     * @param url la ubicación relativa del archivo FXML
+     * @param rb el objeto ResourceBundle que contiene las propiedades específicas del idioma
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -64,7 +70,13 @@ public class VentanaMenuController implements Initializable {
     TextField txtfContrasenia;
     
     public static Cliente clienteN;
-    
+     /**
+     * Realiza la autenticación del usuario.
+     * <p>
+     * Este método verifica las credenciales ingresadas por el usuario.
+     * Si las credenciales son válidas, carga la ventana de bienvenida y muestra las reservas emergentes.
+     * </p>
+     */
     @FXML
     public void auth(){
         //Recuperar datos ingresados en los campos

@@ -5,7 +5,13 @@
 package com.pooespol.p_poo.modelo;
 
 /**
- *
+ * Clase que representa un pago relacionado con una reserva.
+ * 
+ * Un pago contiene información como el ID del pago, la reserva asociada,
+ * la forma de pago, el código de programación y el total a pagar.
+ *  
+ * Esta clase proporciona métodos para acceder y modificar estos atributos.
+ *  
  * @author José Marin
  */
 public class Pago {
@@ -16,7 +22,15 @@ public class Pago {
     Promocion codigoProgramacion;
     double totalXPagar;
     
-    //constructor
+     /**
+     * Constructor para la clase Pago.
+     * 
+     * @param idPago el ID del pago
+     * @param reserva la reserva asociada al pago
+     * @param formaDePago la forma de pago utilizada
+     * @param codigoProgramacion el código de programación asociado al pago
+     * @param totalXPagar el total a pagar
+     */
     public Pago(int idPago, Reserva reserva, FormaPago FormaDePago, Promocion codigoProgramacion, double totalXPagar) {
         this.idPago = idPago;
         this.reserva = reserva;
