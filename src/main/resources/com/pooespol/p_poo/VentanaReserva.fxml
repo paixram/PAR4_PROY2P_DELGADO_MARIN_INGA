@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="282.0" prefWidth="600.0" style="-fx-background-color: #b4b4b4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="282.0" prefWidth="600.0" style="-fx-background-color: #b4b4b4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pooespol.p_poo.VentanaReservaController">
    <children>
       <Label alignment="CENTER" prefHeight="18.0" prefWidth="685.0" text="Reserva" textFill="#661d1d">
          <font>
@@ -31,7 +30,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <ComboBox prefWidth="150.0">
+            <ComboBox fx:id="cbxOrigen" prefWidth="150.0">
                <HBox.margin>
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
@@ -44,7 +43,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <ComboBox prefWidth="150.0">
+            <ComboBox fx:id="cbxDestino" prefWidth="150.0">
                <HBox.margin>
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
@@ -61,7 +60,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <DatePicker prefHeight="26.0" prefWidth="156.0">
+            <DatePicker fx:id="dpSalida" prefHeight="26.0" prefWidth="156.0">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
@@ -74,7 +73,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <DatePicker prefHeight="26.0" prefWidth="148.0">
+            <DatePicker fx:id="dpRegreso" prefHeight="26.0" prefWidth="148.0">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
@@ -99,14 +98,14 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Spinner>
+            <Spinner fx:id="spNumVIajeros">
                <HBox.margin>
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
             </Spinner>
          </children>
       </HBox>
-      <Button mnemonicParsing="false" style="-fx-background-color: #661d1d;" text="Buscar" textFill="WHITE">
+      <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscarVuelos" style="-fx-background-color: #661d1d;" text="Buscar" textFill="WHITE">
          <VBox.margin>
             <Insets left="275.0" />
          </VBox.margin>
