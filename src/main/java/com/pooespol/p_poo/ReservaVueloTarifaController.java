@@ -127,13 +127,7 @@ public class ReservaVueloTarifaController implements Initializable {
         precioTotal = (tarifa.getPorcentaje() * VentanaReservaV1Controller.vueloSeleccionado.getPrecio()) / 100 + VentanaReservaV1Controller.vueloSeleccionado.getPrecio(); // Ajusta según la estructura de tu código
         System.out.println(precioTotal);
         try {
-            Stage stage = (Stage) scrollPaneTarifa.getScene().getWindow();
-            stage.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ReservaVuelo3.fxml")); // Ajusta el nombre del archivo FXML según tu estructura
-            Parent root = fxmlLoader.load();
-            Stage nueva = new Stage();
-            nueva.setScene(new Scene(root));
-            nueva.show();
+            App.setRoot("ReservaVuelo3");
         } catch (IOException e) {
             e.printStackTrace();
         }

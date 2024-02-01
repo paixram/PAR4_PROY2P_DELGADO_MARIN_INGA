@@ -5,8 +5,10 @@
 package com.pooespol.p_poo.modelo;
 
 import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -116,7 +118,9 @@ public class Reserva implements Pagable, Serializable{
         this.tarifaRegreso = tarifaRegreso;
     }
     
-    public void guardarReserva(){
+    //pasar a controller
+    
+    public void guardarReserva(Reserva r){
         FileWriter fW = null;
         BufferedWriter bW = null;
         try{
@@ -124,6 +128,9 @@ public class Reserva implements Pagable, Serializable{
             bW = new BufferedWriter(fW);
             
             
+            bW.write(r.getCodigoReserva()+","+r.getCliente()+","+r.getFechaSalida()+","+
+                    r.getFechaIngreso()+","+r.getNumPasajero()+","+r.getVueloIda()+","+
+                    r.getVueloRegreso()+","+r.getTarifaIda()+","+r.getTarifaRegreso());
             
         }catch(IOException e){
             
@@ -137,10 +144,28 @@ public class Reserva implements Pagable, Serializable{
                 
     }
     
-    public void generarTransaccion(){
-        
+    @Override
+    public void generarTransaccion(){        
+    }
+    
+    public void generarTransaccion(Reserva r) {        
         //codigo rellenar
-        
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+            fos = new FileOutputStream(r.getCodigoReserva());
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(r);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                oos.close();
+                fos.close();
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
         
     }
     

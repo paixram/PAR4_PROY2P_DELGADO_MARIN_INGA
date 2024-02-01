@@ -21,7 +21,7 @@
       </Label>
       <ScrollPane prefHeight="493.0" prefWidth="600.0">
          <content>
-            <VBox id="bivox" prefHeight="402.0" prefWidth="598.0">
+            <VBox id="bivox" fx:id="VB" prefHeight="402.0" prefWidth="598.0">
                <children>
                   <StackPane prefHeight="150.0" prefWidth="200.0">
                      <children>

@@ -39,7 +39,7 @@ public class ReservaVuelo5Controller implements Initializable {
     public static Vuelo v; 
 
     @FXML
-    private VBox VB;
+    VBox VB;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -93,7 +93,7 @@ public class ReservaVuelo5Controller implements Initializable {
 
     public void showTotal(){
         VBox precioBox = new VBox();
-        Label totalLabel = new Label("Precio total: "+ (ReservaVueloTarifaController.precioTotal+ VentanaReservaV3Controller.precioVTREGRESO));
+        Label totalLabel = new Label("Precio total: "+ (ReservaVueloTarifaController.precioTotal+ VentanaReservasV4Controller.precioTotalRegreso));
         totalLabel.setFont(Font.font("System", FontWeight.BOLD, 12));
         precioBox.getChildren().addAll(totalLabel);
         precioBox.setAlignment(Pos.CENTER_RIGHT);
@@ -110,7 +110,7 @@ public class ReservaVuelo5Controller implements Initializable {
         VB.getChildren().add(continuarBOX);
 
         continuarBoton.setOnAction(event -> {
-                abrirVentanaDatos();
+                openVentanaDatos();
             });
     }
 
