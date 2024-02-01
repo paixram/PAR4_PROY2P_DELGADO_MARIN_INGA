@@ -9,6 +9,7 @@ package com.pooespol.p_poo;
  * @author José Miguel
  */
 import com.pooespol.p_poo.modelo.Tarifa;
+import com.pooespol.p_poo.modelo.Vuelo;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -38,7 +39,7 @@ public class ReservaVueloTarifaController implements Initializable {
     ArrayList<Tarifa> tarifas;
     public static Tarifa tarifaSeleccionada;
     public static double precioTotal;
-
+    public static Vuelo vueloSeleccionado;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         tarifas = Tarifa.cargarTarifas("tarifas.txt"); // Ajusta el nombre del archivo según tu estructura
@@ -85,7 +86,7 @@ public class ReservaVueloTarifaController implements Initializable {
                 }
 
                 Label cLabel = new Label(caracteristica);
-                cLabel.setTextFill(Color.WHITE);
+                cLabel.setTextFill(Color.BLACK);
 
                 caracteristicaBox.getChildren().add(cLabel);
                 caracteristicaBox.setSpacing(5);
@@ -116,11 +117,11 @@ public class ReservaVueloTarifaController implements Initializable {
 
             VBoxTarifas.getChildren().add(tarifaVBox);
 
-            tarifaVBox.setOnMouseClicked(event -> abrirVueloRegreso(tarifa));
+            tarifaVBox.setOnMouseClicked(event -> openVueloRegreso(tarifa));
         }
     }
 
-    private void abrirVueloRegreso(Tarifa tarifa) {
+    private void openVueloRegreso(Tarifa tarifa) {
         tarifaSeleccionada = tarifa;
         System.out.println(tarifaSeleccionada.toString());
         precioTotal = (tarifa.getPorcentaje() * VentanaReservaV1Controller.vueloSeleccionado.getPrecio()) / 100 + VentanaReservaV1Controller.vueloSeleccionado.getPrecio(); // Ajusta según la estructura de tu código
@@ -136,5 +137,8 @@ public class ReservaVueloTarifaController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+     public static void setVueloSeleccionado(Vuelo vuelo) {
+        vueloSeleccionado = vuelo;
     }
 }

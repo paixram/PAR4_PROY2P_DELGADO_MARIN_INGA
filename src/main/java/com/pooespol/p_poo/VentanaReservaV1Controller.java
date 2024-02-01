@@ -31,7 +31,7 @@ public class VentanaReservaV1Controller implements Initializable{
     @FXML
     Label lblInfo;
     @FXML
-    ComboBox cbxOrdenado;
+    ComboBox<String> cbxOrdenado;
     @FXML
     VBox panelDetalle;
     public static int opcionOrder;
@@ -47,35 +47,42 @@ public class VentanaReservaV1Controller implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        lblInfo.setText(lblInfo.getText()+" "+VentanaReservaController.origen+" - "+VentanaReservaController.destino);
-        cbxOrdenado.getItems().setAll("precio","duracion");
+        if (VentanaReservaController.origen != null && VentanaReservaController.destino != null) {
+            lblInfo.setText(lblInfo.getText() + " " + VentanaReservaController.origen + " - " + VentanaReservaController.destino);
+        }
+        
+        cbxOrdenado.getItems().setAll("precio", "duracion");
         panelDetalle.setAlignment(Pos.CENTER);
         
-        for(Vuelo v: App.lVuelos){
-            //System.out.println(v.getOrigen()+" - "+v.getDestino());
-            if(String.valueOf(v.getOrigen()).equals(VentanaReservaController.origen) && (v.getDestino().getCiudad()).equals(VentanaReservaController.destino)){
+        for (Vuelo v : App.lVuelos) {
+            if (v.getOrigen() != null && v.getDestino() != null 
+                    && String.valueOf(v.getOrigen()).equals(VentanaReservaController.origen) 
+                    && v.getDestino().getCiudad().equals(VentanaReservaController.destino)) {
                 lVuelosSeleccionados.add(v);
             }
-        
         }
+        
         if (!lVuelosSeleccionados.isEmpty()) {
-            Vuelo vuelo = lVuelosSeleccionados.get(0); // Supongamos que tomamos el primer vuelo de la lista
-            setVuelo(vuelo);
+            order();
         }
-        
-        
         
         panelDetalle.setSpacing(10);
     }
     
     @FXML
-    public void ordenar(){
-        if(cbxOrdenado.getValue().equals("precio")){
-            opcionOrder = 0;     
-        }else{                 
-            opcionOrder = 1;
+    public void order(){
+        String orden = cbxOrdenado.getValue();
+        if (orden == null) {
+            return;
         }
-        Collections.sort(lVuelosSeleccionados);
+        
+        if (orden.equals("precio")) {
+            Collections.sort(lVuelosSeleccionados, (v1, v2) -> Double.compare(v1.getPrecio(), v2.getPrecio()));
+        } else if (orden.equals("duracion")) {
+            Collections.sort(lVuelosSeleccionados, (v1, v2) -> Integer.compare(v1.getDuracion(), v2.getDuracion()));
+        }
+        
+        panelDetalle.getChildren().clear();
         
         for(Vuelo v: lVuelosSeleccionados){
             Label lblDuracion = new Label("Duración "+v.getDuracion()+" horas");
@@ -99,7 +106,7 @@ public class VentanaReservaV1Controller implements Initializable{
             contenedor.setOnMouseClicked(new EventHandler<MouseEvent>(){
                 @Override
                 public void handle(MouseEvent e){
-                    
+                    vueloSeleccionado =v;
                     try {
                         App.setRoot("ReservaVuelo2");
                     } catch (IOException ex) {
@@ -112,15 +119,6 @@ public class VentanaReservaV1Controller implements Initializable{
             
         }
     }
-    public void setVuelo(Vuelo vuelo) {
-        // Aquí configuras el vuelo en tu controlador según sea necesario
-        System.out.println("Vuelo configurado: " + vuelo);
-    }
     
-    
-    
-    
-    
-    
-    
+ 
 }

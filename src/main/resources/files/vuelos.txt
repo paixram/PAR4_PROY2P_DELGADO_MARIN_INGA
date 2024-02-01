@@ -1,34 +1,54 @@
-OK7D77,Cuenca,Barcelona,19,07:25,00:25,Airbus 2262,725.00
-AV6F48,Cuenca,Barcelona,15,04:25,06:25,Airbus 0070,620.00
-OA6G12,Cuenca,Barcelona,20,03:30,05:25,Airbus A369,623.06
-JJ2T88,Cuenca,Barcelona,19,07:25,00:25,Airbus 2262,725.00
-OK7G77,Cuenca,El Cairo,13,10:30,11:25,Airbus 1117,700.50
-AV6Y48,Cuenca,El Cairo,15,04:25,06:25,Airbus 0007,700.50
-JJ2J88,Quito,El Cairo,19,04:25,00:25,Airbus 2227,700.50
-OK7U77,Quito,México,13,14:30,11:25,Airbus 1311,745.50
-AV6248,Quito,México,15,02:25,06:25,Airbus 0100,680.00
-OA6612,Quito,México,20,03:30,05:25,Airbus A119,353.06
-JJ2688,Cuenca,México,19,04:25,00:25,Airbus 2122,725.00
-OK7U77,Cuenca,Berlín,13,14:30,11:25,Airbus 1121,645.50
-AV6Y48,Cuenca,Berlín,15,02:25,06:25,Airbus 0020,680.00
-JJ2588,Quito,Berlín,19,05:25,00:25,Airbus 2222,625.00
-OK7D77,Guayaquil,Río de Janeiro,13,17:30,11:25,Airbus 11141,775.50
-AV6348,Cuenca,Río de Janeiro,15,04:25,06:25,Airbus 0040,670.00
-JJ2288,Cuenca,Río de Janeiro,19,06:25,00:25,Airbus 2422,745.00
 OK7177,Guayaquil,Barcelona,13,10:30,11:25,Airbus 1111,745.50
 AV6148,Guayaquil,Barcelona,15,04:25,06:25,Airbus 0000,680.00
 JJ2188,Guayaquil,Barcelona,19,04:25,00:25,Airbus 2222,725.00
 OA6112,Guayaquil,Barcelona,20,03:30,05:25,Airbus A319,653.06
-OK7277,Guayaquil,El Cairo,13,17:30,11:25,Airbus 11141,775.50
-AV6348,Guayaquil,El Cairo,15,04:25,06:25,Airbus 0040,670.00
-JJ2288,Guayaquil,El Cairo,19,06:25,00:25,Airbus 2422,745.00
-OK7377,Guayaquil,México,13,17:30,11:25,Airbus 1151,745.50
-AV6448,Guayaquil,México,15,04:25,06:25,Airbus 0050,680.00
-JJ2388,Guayaquil,México,19,04:25,00:25,Airbus 2252,725.00
-OA6312,Guayaquil,México,20,07:30,05:25,Airbus A359,623.06
-OK7747,Cuenca,Berlín,13,10:30,11:25,Airbus 1131,725.50
-AV6258,Cuenca,Berlín,15,07:25,06:25,Airbus 0060,680.00
-JJ2648,Cuenca,Berlín,19,04:25,00:25,Airbus 2232,725.00
-OK7277,Guayaquil,Río de Janeiro,13,17:30,11:25,Airbus 11141,775.50
-AV6348,Guayaquil,Río de Janeiro,15,04:25,06:25,Airbus 0040,670.00
-JJ2288,Guayaquil,Río de Janeiro,19,06:25,00:25,Airbus 2422,745.00
+JH81SL,Barcelona,Guayaquil,12,06:25,12:25,Airbus G152,689.05
+8311AS,Barcelona,Guayaquil,10,13:00,23:00,Airbus X778,780.50
+OK7277,Guayaquil,ElCairo,13,17:30,11:25,Airbus 11141,775.50
+AV6348,Guayaquil,ElCairo,15,04:25,06:25,Airbus 0040,670.00
+JJ2288,Guayaquil,ElCairo,19,06:25,00:25,Airbus 2422,745.00
+JH82SL,ElCairo,Guayaquil,12,05:25,12:25,Airbus G452,649.05
+8312AS,ElCairo,Guayaquil,10,13:00,23:00,Airbus X478,200.50
+OK7377,Guayaquil,Mexico,13,17:30,11:25,Airbus 1151,745.50
+AV6448,Guayaquil,Mexico,15,04:25,06:25,Airbus 0050,680.00
+JJ2388,Guayaquil,Mexico,19,04:25,00:25,Airbus 2252,725.00
+OA6312,Guayaquil,Mexico,20,07:30,05:25,Airbus A359,623.06
+JH83SL,Mexico,Guayaquil,12,06:25,12:25,Airbus G152,619.05
+8313AS,Mexico,Guayaquil,10,13:00,23:00,Airbus X758,730.50
+OK7747,Guayaquil,Berlin,13,10:30,11:25,Airbus 1131,725.50
+AV6258,Guayaquil,Berlin,15,07:25,06:25,Airbus 0060,680.00
+JJ2648,Guayaquil,Berlin,19,04:25,00:25,Airbus 2232,725.00
+JH865L,Berlin,Guayaquil,12,07:25,12:25,Airbus G132,689.05
+831QAS,Berlin,Guayaquil,10,13:00,23:00,Airbus X738,700.50
+OK7277,Guayaquil,RiodeJaneiro,13,17:30,11:25,Airbus 11141,775.50
+AV6348,Guayaquil,RiodeJaneiro,15,04:25,06:25,Airbus 0040,670.00
+JJ2288,Guayaquil,RiodeJaneiro,19,06:25,00:25,Airbus 2422,745.00
+JH82SL,RiodeJaneiro,Guayaquil,12,05:25,12:25,Airbus G452,649.05
+8312AS,RiodeJaneiro,Guayaquil,10,13:00,23:00,Airbus X478,200.50
+OK7D77,Cuenca,Barcelona,13,17:30,11:25,Airbus 1161,745.50
+AV6F48,Cuenca,Barcelona,15,04:25,06:25,Airbus 0070,620.00
+JJ2T88,Cuenca,Barcelona,19,07:25,00:25,Airbus 2262,725.00
+OA6G12,Cuenca,Barcelona,20,03:30,05:25,Airbus A369,623.06
+JH8GSL,Barcelona,Cuenca,12,07:25,12:25,Airbus G162,649.05
+831GAS,Barcelona,Cuenca,10,14:00,23:00,Airbus X768,740.50
+OK7G77,Cuenca,ElCairo,13,10:30,11:25,Airbus 1117,745.50
+AV6Y48,Cuenca,ElCairo,15,04:25,06:25,Airbus 0007,680.00
+JJ2J88,Cuenca,ElCairo,19,04:25,00:25,Airbus 2227,425.00
+JH8JSL,ElCairo,Cuenca,12,04:25,12:25,Airbus G157,489.05
+831GAS,ElCairo,Cuenca,10,13:00,23:00,Airbus X777,700.50
+OK7U77,Cuenca,Mexico,13,14:30,11:25,Airbus 1311,745.50
+AV6248,Cuenca,Mexico,15,02:25,06:25,Airbus 0100,680.00
+JJ2688,Cuenca,Mexico,19,04:25,00:25,Airbus 2122,725.00
+OA6612,Cuenca,Mexico,20,03:30,05:25,Airbus A119,353.06
+JH86SL,Mexico,Cuenca,12,06:25,12:25,Airbus G112,489.05
+831DAS,Mexico,Cuenca,10,12:00,23:00,Airbus X718,500.50
+OK7U77,Cuenca,Berlin,13,14:30,11:25,Airbus 1121,645.50
+AV6Y48,Cuenca,Berlin,15,02:25,06:25,Airbus 0020,680.00
+JJ2588,Cuenca,Berlin,19,05:25,00:25,Airbus 2212,625.00
+JH84SL,Berlin,Cuenca,12,06:25,12:25,Airbus G112,789.05
+831WAS,Berlin,Cuenca,10,13:00,23:00,Airbus X728,200.50
+OK7277,Cuenca,RiodeJaneiro,13,17:30,11:25,Airbus 11141,775.50
+AV6348,Cuenca,RiodeJaneiro,15,04:25,06:25,Airbus 0040,670.00
+JJ2288,Cuenca,RiodeJaneiro,19,06:25,00:25,Airbus 2422,745.00
+JH82SL,RiodeJaneiro,Cuenca,12,05:25,12:25,Airbus G452,649.05
+8312AS,RiodeJaneiro,Cuenca,10,13:00,23:00,Airbus X478,200.50

@@ -39,8 +39,8 @@ import javafx.scene.control.Separator;
 public class VentanaReservaV3Controller implements Initializable {
 
     ArrayList<Vuelo> vuelosConsultar;
-    public static Vuelo Regreso;
-
+    
+    public static Vuelo Ida;
     @FXML
     private ComboBox<String> cbxOrdenado;
     @FXML
@@ -97,19 +97,19 @@ public class VentanaReservaV3Controller implements Initializable {
             
             VBoxDinamico.getChildren().add(vueloVBox);
             
-            vueloVBox.setOnMouseClicked(event -> abrirVentanaTarifaRegreso(vuelo));
+            vueloVBox.setOnMouseClicked(event -> openVentanaTarifaRegreso(vuelo));
         }
     }
 }
 
     
-    private void abrirVentanaTarifaRegreso(Vuelo vuelo) {
-        Regreso = vuelo;
-        System.out.println(Regreso.toString());
+    private void openVentanaTarifaRegreso(Vuelo vuelo) {
+        Ida = vuelo;
+        System.out.println(Ida.toString());
         try {
             Stage stage = (Stage) panelDetalle.getScene().getWindow();
             stage.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("ReservaVuelo1.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("ReservaVuelo3.fxml"));
             Parent root = fxmlLoader.load();
             Stage vt = new Stage();
             vt.setScene(new Scene(root));
@@ -118,7 +118,7 @@ public class VentanaReservaV3Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
+    @FXML
     private void orderVuelos() {
         String seleccion = cbxOrdenado.getValue();
         if (seleccion != null) {
