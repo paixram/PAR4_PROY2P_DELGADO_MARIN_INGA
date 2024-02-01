@@ -60,18 +60,22 @@ public class VentanaPagoAController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         // set resumen de compra
-        compratext.setText(String.valueOf(ReservaVuelo5Controller.pTotal));
+        compratext = new Label(String.valueOf(ReservaVuelo5Controller.pTotal));
         
         // Manejar Eventos
+        tc_check = new RadioButton();
+        cash_check = new RadioButton();
         tc_check.setOnMouseClicked((event) -> setTipoPago(FormaPago.T));
         cash_check.setOnMouseClicked((event) -> setTipoPago(FormaPago.E));
         
         // Click en Pagar
+        pagarbt = new Button();
         pagarbt.setOnMouseClicked((event) -> {
             
             try{
                 CheckAndPay();
             }catch(CodigoInvalidoException ci) {
+                errorcodigo = new Label();
                 errorcodigo.setText(ci.getMessage());
             }
             
