@@ -12,6 +12,13 @@ public enum Ciudad {
     
     Guayaquil,
     Quito,
-    Cuenca;
+    Cuenca,
+    Barcelona,
+    Mexico,
+    Berlin,
+    ElCairo,
+    RiodeJaneiro,
+    
+    
     
 }
