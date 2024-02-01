@@ -107,7 +107,7 @@ public class ReservaVuelo5Controller implements Initializable {
         continuarBoton.setTextFill(Color.WHITE);
         continuarBOX.getChildren().addAll(continuarBoton);
         continuarBOX.setAlignment(Pos.CENTER);
-        vD.getChildren().add(continuarBOX);
+        VB.getChildren().add(continuarBOX);
 
         continuarBoton.setOnAction(event -> {
                 abrirVentanaDatos();
@@ -133,7 +133,7 @@ public class ReservaVuelo5Controller implements Initializable {
     private void openVentanaDatos() {
         try {
             
-        Stage stage = (Stage) vD.getScene().getWindow();
+        Stage stage = (Stage) VB.getScene().getWindow();
         stage.close();
         
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Datos.fxml"));
