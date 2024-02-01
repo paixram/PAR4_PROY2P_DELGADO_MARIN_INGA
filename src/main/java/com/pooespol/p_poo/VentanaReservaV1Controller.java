@@ -33,7 +33,7 @@ public class VentanaReservaV1Controller implements Initializable{
     VBox panelDetalle;
     public static int opcionOrder;
     public static ArrayList<Vuelo> lVuelosSeleccionados = new ArrayList<>();
-    
+    public static Vuelo vueloSeleccionado;
     /**
      * Inicializa la ventana de reserva de vuelos.
      * Se ejecuta al cargar el archivo FXML.
@@ -53,6 +53,11 @@ public class VentanaReservaV1Controller implements Initializable{
             if(v.getOrigen().equals(VentanaReservaController.origen) && v.getDestino().equals(VentanaReservaController.destino)){
                 lVuelosSeleccionados.add(v);
             }
+        
+        }
+        if (!lVuelosSeleccionados.isEmpty()) {
+            Vuelo vuelo = lVuelosSeleccionados.get(0); // Supongamos que tomamos el primer vuelo de la lista
+            setVuelo(vuelo);
         }
         
         ordenar();
@@ -82,6 +87,10 @@ public class VentanaReservaV1Controller implements Initializable{
             contenedor.setSpacing(10);
             panelDetalle.getChildren().addAll(contenedor);
         }
+    }
+    public void setVuelo(Vuelo vuelo) {
+        // Aquí configuras el vuelo en tu controlador según sea necesario
+        System.out.println("Vuelo configurado: " + vuelo);
     }
     
     
