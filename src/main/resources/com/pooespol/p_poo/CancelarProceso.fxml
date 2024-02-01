@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="182.0" prefWidth="422.0" style="-fx-background-color: #b4b4b4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="182.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label alignment="CENTER" prefHeight="39.0" prefWidth="604.0" text="Cancelar compra" textFill="#661d1d">
          <font>
@@ -28,7 +27,7 @@
       </Label>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #661d1d;" text="Sí" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#salirBienvenida" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #661d1d;" text="Sí" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

@@ -157,10 +157,8 @@ public class VentanaReservaV3Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         if (VentanaReservaController.origen != null && VentanaReservaController.destino != null) {
-            lblInfo.setText(lblInfo.getText() + " " + VentanaReservaController.origen + " - " + VentanaReservaController.destino);
+            lblInfo.setText(lblInfo.getText() + " " + VentanaReservaController.destino + " - " + VentanaReservaController.origen);
         }
-        
-        lblInfo.setText(lblInfo.getText() + " " + VentanaReservaController.origen + " - " + VentanaReservaController.destino);
         cbxOrdenado.getItems().setAll("precio", "duracion");
         panelDetalle.setAlignment(Pos.CENTER);
         
