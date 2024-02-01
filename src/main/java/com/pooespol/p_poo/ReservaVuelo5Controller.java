@@ -13,10 +13,8 @@ import javafx.fxml.Initializable;
  *
  * @author Luizzz
  */
-public class VentanaReservasEmergentesController implements Initializable {
-    
-    
-    
+public class ReservaVuelo5Controller implements Initializable {
+
     /**
      * Initializes the controller class.
      */
