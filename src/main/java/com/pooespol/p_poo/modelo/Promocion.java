@@ -23,7 +23,7 @@ public class Promocion {
     int descuento;
 
     //constructor
-    public Promocion(double coordenadaY, double coordenadaX, String pais, String codigo, int descuento) {
+    public Promocion(double coordenadaY, double coordenadaX, String codigo, String pais, int descuento) {
         this.coordenadaY = coordenadaY;
         this.coordenadaX = coordenadaX;
         this.pais = pais;

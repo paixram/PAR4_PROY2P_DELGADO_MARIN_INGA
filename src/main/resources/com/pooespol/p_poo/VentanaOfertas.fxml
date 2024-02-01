@@ -1,31 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="454.0" prefWidth="574.0" style="-fx-background-color: #b4b4b4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pooespol.p_poo.VentanaOfertasController">
    <children>
-      <Label alignment="CENTER" prefHeight="18.0" prefWidth="578.0" text="Explora Ofertas" textFill="#661d1d">
+      <Label layoutX="198.0" layoutY="14.0" text="Explora ofertas" textFill="#661d1d">
          <font>
             <Font name="System Bold" size="27.0" />
-         </font>
-      </Label>
-      <Label text="Da click sobre el país que interesa y aprovecha las promociones disponibles">
+         </font></Label>
+      <Label layoutX="79.0" layoutY="54.0" text="Da clic sobre el pais que te interese y aprovecha las promociones disponibles">
          <font>
             <Font name="System Bold" size="12.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="10.0" />
-         </VBox.margin>
-      </Label>
-      <ImageView fitHeight="364.0" fitWidth="566.0" pickOnBounds="true" preserveRatio="true">
+         </font></Label>
+      <ImageView fx:id="imgView" fitHeight="371.0" fitWidth="613.0" layoutX="-2.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/mapa.png" />
-         </image>
-      </ImageView>
+         </image></ImageView>
+      <AnchorPane fx:id="anchoImg" layoutY="83.0" prefHeight="371.0" prefWidth="578.0" />
    </children>
-</VBox>
+</AnchorPane>
